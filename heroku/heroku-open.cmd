@@ -1,0 +1,2 @@
+call heroku open
+@pause
