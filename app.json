@@ -1,0 +1,23 @@
+{
+  "name": "openblocks-iot-examples",
+  "description": "openblocks iot examples",
+  "scripts": {
+    "postdeploy": "echo post deploy",
+    "pr-predestroy": "echo review app pre-destroy"
+  },
+  "env": {
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
