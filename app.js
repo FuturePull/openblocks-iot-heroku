@@ -13,7 +13,7 @@ void function () {
 					str += data;
 				});
 				req.on('end', () => {
-					list.append(str);
+					list.push(str);
 					if (list.length > 100) list.shift();
 					res.end('');
 				});
