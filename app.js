@@ -3,7 +3,7 @@ void function () {
 
 	const http = require('http');
 	const list = ['first'];
-	const releaseDate = '2016-09-12 07:00 JST';
+	const releaseDate = '2016-09-12 07:00 JST ' + new Date();
 
 	http.createServer((req, res) => {
 		if (req.url.startsWith('/endpoint')) {
