@@ -2,6 +2,7 @@ void function () {
 	'use strict';
 
 	const http = require('http');
+	const fs = require('fs');
 	const list = [new Date() + ' first'];
 	const releaseDate = '2016-09-12 21:00 JST ' + new Date();
 
@@ -18,6 +19,12 @@ void function () {
 			res.write('<input type="submit" value="POST">\r\n');
 			res.write('</form>\r\n');
 			res.end();
+		}
+
+		if (req.url.startsWith('/favicon')) {
+			res.writeHead(200, {'Content-Type': 'image/x-icon'});
+			fs.createReadStream('favicon.ico').pipe(res);
+			return;
 		}
 
 		if (req.url.startsWith('/endpoint')) {
