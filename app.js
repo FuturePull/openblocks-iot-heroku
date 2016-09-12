@@ -34,7 +34,7 @@ void function () {
 					str += data;
 				});
 				req.on('end', () => {
-					list.push(new Date() + ' ' + str);
+					list.push(new Date() + ' ' + req.method + ' ' + str);
 					if (list.length > 100) list.shift();
 					ff();
 				});
