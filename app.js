@@ -4,7 +4,7 @@ void function () {
 	const http = require('http');
 	const fs = require('fs');
 	const list = [new Date() + ' first'];
-	const releaseDate = '2016-09-12 21:00 JST ' + new Date();
+	const releaseDate = '2016-09-12 22:40 JST ' + new Date();
 
 	http.createServer((req, res) => {
 		function ff() {
