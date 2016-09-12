@@ -28,7 +28,7 @@ void function () {
 		}
 
 		if (req.url.startsWith('/endpoint')) {
-			if (req.method === 'POST') {
+			if (req.method !== 'GET') {
 				let str = '';
 				req.on('data', (data) => {
 					str += data;
