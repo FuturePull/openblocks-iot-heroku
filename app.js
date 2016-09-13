@@ -6,7 +6,7 @@ void function () {
 	const fs = require('fs');
 
 	const list = [getDateTime() + ' STARTED'];
-	const releaseDate = 'Release:2016-09-13 22:00 JST, process started:' + getDateTime();
+	const releaseDate = 'Release:2016-09-14 00:30 JST, process started:' + getDateTime();
 
 	function getDateTime() {
 		return (new Date() + '')
