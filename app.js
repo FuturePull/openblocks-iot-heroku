@@ -33,7 +33,7 @@ void function () {
 						s = s.substr(0, pos + 11) + '\r\n' +
 							JSON.stringify(JSON.parse(s.substr(pos + 11)), null, '  ')
 								.split('\n')
-								.map(s => '                              ' + s)
+								.map(s => '                                   ' + s)
 								.join('\r\n');
 					} catch (e) {
 						s += ' ' + e;
@@ -44,7 +44,7 @@ void function () {
 						s = s.substr(0, pos + 14) + '\r\n' +
 							JSON.stringify(JSON.parse(s.substr(pos + 14)), null, '  ')
 								.split('\n')
-								.map(s => '                              ' + s)
+								.map(s => '                                   ' + s)
 								.join('\r\n');
 					} catch (e) {
 						s += ' ' + e;
