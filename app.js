@@ -46,4 +46,17 @@ void function () {
 		res.end('<p>hello world ' + releaseDate + '</p>');
 	}).listen(process.env.PORT || 3000);
 
+	(process.env.APP_URLS || '')
+		.split(';')
+		.filter(x => x)
+		.forEach(x => {
+			const opts = url.parse(x);
+			opts.method = 'GET';
+
+			http.request(opts, res => 0).end(); 
+			setInterval(() => {
+				http.request(opts, res => 0).end(); 
+			}, 15 * 60 * 1000)
+		});
+
 } ();
