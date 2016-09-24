@@ -62,7 +62,7 @@ void function () {
 
 		if (req.url.startsWith('/favicon')) {
 			res.writeHead(200, {'Content-Type': 'image/x-icon'});
-			fs.createReadStream('favicon.ico').pipe(res);
+			fs.createReadStream('public/favicon.ico').pipe(res);
 			return;
 		}
 
