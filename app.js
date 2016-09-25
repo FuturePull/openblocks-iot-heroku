@@ -23,7 +23,7 @@
 	// context - コンテキスト
 	const context = {
 		list: [getDateTime() + ' STARTED'],
-		releaseDate: 'Release:2016-09-26 06:30 JST, process started:' + getDateTime(),
+		releaseDate: 'Release:2016-09-26 06:55 JST, process started:' + getDateTime(),
 		express: {version: require('express/package').version},
 		app: {version: require('./package').version}
 	};

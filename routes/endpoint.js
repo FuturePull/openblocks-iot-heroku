@@ -7,8 +7,7 @@ module.exports = function routesIndex(context) {
 	/* GET endpoint page. */
 	router.get('/', function(req, res, next) {
 		if (JSON.stringify(req.query) !== '{}') {
-			if (req.body.Data) try { req.body.Data = JSON.parse(req.body.Data); } catch (e) {}
-			if (req.body.Records) try { req.body.Records = JSON.parse(req.body.Records); } catch (e) {}
+			if (req.query.Data) try { req.query.Data = JSON.parse(req.query.Data); } catch (e) {}
 			context.list.unshift({
 				time: getDateTime(),
 				method: req.method,
