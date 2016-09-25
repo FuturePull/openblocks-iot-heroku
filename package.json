@@ -3,9 +3,20 @@
   "version": "0.0.0",
   "description": "openblocks iot heroku",
   "main": "app.js",
+  "private": true,
   "scripts": {
     "start": "node app",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "~2.4.1",
+    "express": "~4.13.4",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0",
+    "serve-index": "^1.8.0"
   },
   "repository": {
     "type": "git",
@@ -15,10 +26,10 @@
     "openblocks",
     "iot"
   ],
-  "author": "LightSpeedC",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/FuturePull/openblocks-iot-heroku/issues"
   },
-  "homepage": "https://github.com/FuturePull/openblocks-iot-heroku#readme"
+  "homepage": "https://github.com/FuturePull/openblocks-iot-heroku#readme",
+  "author": "LightSpeedC",
+  "license": "MIT"
 }

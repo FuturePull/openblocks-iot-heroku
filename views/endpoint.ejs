@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<link rel='stylesheet' href='/css/style.css' />
+	</head>
+	<body>
+		<h1><%= title %></h1>
+		<p>Welcome to <%= title %></p>
+		<p>Express version <%= context.express.version %></p>
+
+		<form name="formGet" method="GET" action="/endpoint">
+		<input name="Data" value="" size="100">
+		<input type="submit" value="GET">
+		</form>
+
+		<form name="formPost"method="POST" action="/endpoint">
+		<input name="Data" value="" size="100">
+		<input type="submit" value="POST">
+		</form>
+
+		<input type="button" value="LOC URL" onclick="locURL()">
+		<input type="button" value="XHR GET" onclick="xhrGet()">
+		<input type="button" value="XHR POST FORM" onclick="xhrPostForm()">
+		<input type="button" value="XHR POST JSON" onclick="xhrPostJson()">
+
+		<pre>req.method = <%= req.method %></pre>
+		<pre>req.query: <%= JSON.stringify(req.query, null, '\t') %></pre>
+		<pre>req.body: <%= JSON.stringify(req.body, null, '\t') %></pre>
+		<pre>req.headers: <%= JSON.stringify(req.headers, null, '\t') %></pre>
+
+		<pre>context: <%= JSON.stringify(context, null, '\t') %></pre>
+
+<script>
+
+function locURL() {
+	location = 'endpoint?a=1&b=2';
+}
+
+function xhrGet() {
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4) // DONE
+			if (xhr.status == 200) // OK
+				alert(xhr.responseText);
+			else alert('status = ' + xhr.status);
+	};
+	xhr.open('GET', '/endpoint?a=1&b=2');
+	xhr.setRequestHeader('X-Get-Data' , 'true');
+	xhr.send();
+}
+
+function xhrPostForm() {
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4) // DONE
+			if (xhr.status == 200) // OK
+				alert(xhr.responseText);
+			else alert('status = ' + xhr.status);
+	};
+	xhr.open('POST', '/endpoint');
+	xhr.setRequestHeader('X-Get-Data' , 'true');
+	xhr.setRequestHeader('Content-Type' , 'application/x-www-form-urlencoded');
+	xhr.send('a=b&c=d');
+}
+
+function xhrPostJson() {
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4) // DONE
+			if (xhr.status == 200) // OK
+				alert(xhr.responseText);
+			else alert('status = ' + xhr.status);
+	};
+	xhr.open('POST', '/endpoint');
+	xhr.setRequestHeader('X-Get-Data' , 'true');
+	xhr.setRequestHeader('Content-Type' , 'application/json');
+	xhr.send('{"x":1,"y":2}');
+}
+
+</script>
+
+	</body>
+</html>
