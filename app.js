@@ -18,22 +18,19 @@
 	const bodyParser = require('body-parser');
 	const serveIndex = require('serve-index');
 
+	const DateTime = require('date-time-string');
+	const getDateTime = DateTime.toDateTimeString;
+
 	debug('start');
 
 	// context - コンテキスト
 	const context = {
 		list: [getDateTime() + ' STARTED'],
-		releaseDate: 'Release:2016-09-26 06:55 JST, process started:' + getDateTime(),
+		releaseDate: '2016-09-26 09:33 JST',
+		startDateTime: getDateTime(),
 		express: {version: require('express/package').version},
 		app: {version: require('./package').version}
 	};
-
-	function getDateTime() {
-		return (new Date() + '')
-			.replace(' (東京 (標準時))', '')
-			.replace(' (JST)', '')
-			.replace(' GMT+0900', '')
-	}
 
 	// initialize app - アプリケーション初期化
 	const app = express();

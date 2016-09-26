@@ -1,6 +1,8 @@
 'use strict';
 
 const router = require('express').Router();
+const DateTime = require('date-time-string');
+const getDateTime = DateTime.toDateTimeString;
 
 module.exports = function routesIndex(context) {
 
@@ -38,12 +40,5 @@ module.exports = function routesIndex(context) {
 	});
 
 	return function routerEndPoint() { return router.apply(this, arguments); };
-
-	function getDateTime() {
-		return (new Date() + '')
-			.replace(' (東京 (標準時))', '')
-			.replace(' (JST)', '')
-			.replace(' GMT+0900', '')
-	}
 
 };
