@@ -5,9 +5,8 @@
 		<link rel='stylesheet' href='/css/style.css' />
 	</head>
 	<body>
-		<h1><%= title %></h1>
-		<p>Welcome to <%= title %></p>
-		<p>Express version <%= context.express.version %></p>
+		<h1><a href="endpoint"><%= title %></a></h1>
+		<p>Welcome to <%= title %>: Express v<%= context.express.version %></p>
 
 		<form name="formGet" method="GET" action="/endpoint">
 		<input name="Data" value="" size="100">
@@ -24,12 +23,12 @@
 		<input type="button" value="XHR POST FORM" onclick="xhrPostForm()">
 		<input type="button" value="XHR POST JSON" onclick="xhrPostJson()">
 
-		<pre>req.method = <%= req.method %></pre>
-		<pre>req.query: <%= JSON.stringify(req.query, null, '\t') %></pre>
-		<pre>req.body: <%= JSON.stringify(req.body, null, '\t') %></pre>
-		<pre>req.headers: <%= JSON.stringify(req.headers, null, '\t') %></pre>
+		<p>req.method: <%= req.method %></pre>
+		<p>req.query: <%= JSON.stringify(req.query, null, '\t') %></p>
+		<p>req.body: <%= JSON.stringify(req.body, null, '\t') %></p>
+		<pre>req.headers: <%= JSON.stringify(req.headers, null, '\t').replace(/\"/g, '') %></pre>
 
-		<pre>context: <%= JSON.stringify(context, null, '\t') %></pre>
+		<pre>context: <%= JSON.stringify(context, null, '\t').replace(/\"/g, '') %></pre>
 
 <script>
 

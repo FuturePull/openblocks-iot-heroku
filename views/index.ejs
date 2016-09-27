@@ -6,9 +6,11 @@
 	</head>
 	<body>
 		<h1><%= title %></h1>
-		<p>Welcome to <%= title %></p>
-		<p>Express version <%= context.express.version %></p>
+		<p>Welcome to <%= title %> v<%= context.express.version %></p>
 		<% include common %>
-		<pre><%= JSON.stringify(context, null, '  ') %></pre>
+		<p>releaseDate: <%= context.releaseDate %></p>
+		<p>startDateTime: <%= context.startDateTime %></p>
+		<p>context.express: <%= JSON.stringify(context.express, null, '  ') %></p>
+		<p>context.app: <%= JSON.stringify(context.app, null, '  ') %></p>
 	</body>
 </html>

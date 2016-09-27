@@ -25,11 +25,11 @@
 
 	// context - コンテキスト
 	const context = {
-		list: [getDateTime() + ' STARTED'],
-		releaseDate: '2016-09-26 19:50 JST',
+		releaseDate: '2016-09-28 07:30 JST',
 		startDateTime: getDateTime(),
 		express: {version: require('express/package').version},
-		app: {version: require('./package').version}
+		app: {version: require('./package').version},
+		list: [{started: getDateTime()}]
 	};
 
 	// initialize app - アプリケーション初期化
