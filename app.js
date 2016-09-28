@@ -25,7 +25,7 @@
 
 	// context - コンテキスト
 	const context = {
-		releaseDate: '2016-09-28 07:30 JST',
+		releaseDate: '2016-09-29 07:18 JST',
 		startDateTime: getDateTime(),
 		express: {version: require('express/package').version},
 		app: {version: require('./package').version},
