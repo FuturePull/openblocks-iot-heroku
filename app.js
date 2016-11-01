@@ -161,6 +161,7 @@
 		});
 	});
 
+/*
 	// APP_URLS polling
 	(process.env.APP_URLS || '')
 		.split(';')
@@ -175,3 +176,4 @@
 				http.request(opts, res => 0).end(); 
 			}, 15 * 60 * 1000)
 		});
+*/
